@@ -1,8 +1,38 @@
-# HSK 3 — Bài học tiếng Trung (Day 1–40)
+# HSK 3 — Bài học mỗi ngày
 
-Học từ Bài 1 lên Bài 10, mỗi ngày 5 từ mới, 7 ngày/tuần. Tổng 197 từ / 40 ngày.
+Bộ bài học HSK 3: 40 ngày, mỗi ngày 5 từ mới, học từ Bài 1 đến Bài 10. Tổng 197 từ / 40 ngày.
 
-| Ngày | Bài | Từ mới | Link |
+👉 **Mở trang mục lục (đầy đủ 40 ngày):**
+
+**[https://vinhnd2026.github.io/HSK3/](https://vinhnd2026.github.io/HSK3/)**
+
+## 📚 Mục lục các khóa học
+
+| Khóa học | Từ mới | Số ngày | Trang học |
+|---|---|---|---|
+| HSK 1 | 178 | 36 | [Mở](https://vinhnd2026.github.io/HSK1/) |
+| HSK 2 | 213 | 43 | [Mở](https://vinhnd2026.github.io/HSK2/) |
+| HSK 3 | 197 | 40 | [Mở](https://vinhnd2026.github.io/HSK3/) |
+| HSK 4 | 191 | 39 | [Mở](https://vinhnd2026.github.io/HSK4/) |
+| HSK 3 — bản theo ngày (Homework) | 198 | 36 | [Mở](https://vinhnd2026.github.io/Homework/) |
+| Trung cấp 1 | 266 | 54 | ⏳ đang hoàn thiện |
+| Trung cấp 2 | 355 | 71 | ⏳ đang hoàn thiện |
+| Trung cấp 3 | 236 | 48 | ⏳ đang hoàn thiện |
+| Trung cấp 4 | 206 | 42 | ⏳ đang hoàn thiện |
+| Cao cấp 1 | 447 | 90 | ⏳ đang hoàn thiện |
+| Cao cấp 2 | 405 | 81 | ⏳ đang hoàn thiện |
+| Cao cấp 3 | 353 | 71 | ⏳ đang hoàn thiện |
+| Cao cấp 4 | 357 | 72 | ⏳ đang hoàn thiện |
+
+## Bổ sung (học sau khi xong 40 ngày)
+
+- **📖 Ôn tập Ngữ pháp HSK 3 (40 điểm + 33 bài tập):** [Bai-Hoc-On-Ngu-Phap-HSK3.html](https://vinhnd2026.github.io/HSK3/Bai-Hoc-On-Ngu-Phap-HSK3.html) — pinyin hiện sẵn trong mọi ví dụ.
+- **📚 Bài Tổng Kết HSK 3:** [Bai-Hoc-Tong-Ket-HSK3.html](https://vinhnd2026.github.io/HSK3/Bai-Hoc-Tong-Ket-HSK3.html) — flashcard toàn bộ từ, bảng từ vựng 10 bài, 8 bài tập tổng kết (62 bài tập), truyện tổng kết dùng đủ toàn bộ từ vựng.
+
+Bấm vào từng ngày bên dưới để mở thẳng trang bài học của ngày đó.
+(Bài học được mở trực tiếp trên trình duyệt, không cần tải file về.)
+
+| Ngày | Bài | Từ mới | Bài học |
 |---|---|---|---|
 | Day 1 | Bài 1 | 北, 北边, 北方, 边, 城市 | [Mở bài học](https://vinhnd2026.github.io/HSK3/Day-01.html) |
 | Day 2 | Bài 1 | 东边, 方便, 环境, 交通, 老家 | [Mở bài học](https://vinhnd2026.github.io/HSK3/Day-02.html) |
@@ -44,3 +74,13 @@ Học từ Bài 1 lên Bài 10, mỗi ngày 5 từ mới, 7 ngày/tuần. Tổng
 | Day 38 | Bài 10 | 加油, 结束, 紧张, 精彩, 迷 | [Mở bài học](https://vinhnd2026.github.io/HSK3/Day-38.html) |
 | Day 39 | Bài 10 | 强, 实力, 世界杯, 输, 赢 | [Mở bài học](https://vinhnd2026.github.io/HSK3/Day-39.html) |
 | Day 40 | Bài 10 | 运气, 转播 | [Mở bài học](https://vinhnd2026.github.io/HSK3/Day-40.html) |
+
+## Tài liệu kèm theo
+
+- [Lịch học HSK 3 (Excel)](https://github.com/vinhnd2026/HSK3/blob/main/Lich-hoc-hsk3.xlsx)
+
+## Ghi chú
+
+- Mỗi bài học có flashcard 20 từ (20 từ gần nhất đã học trước đó), bài nghe, nối từ, bẫy ngữ pháp, điền từ, xếp câu, đọc hiểu và đáp án.
+- Cuối tuần Bài 7 là đoạn văn đọc hiểu tổng kết tuần.
+- Tiến độ làm bài được lưu riêng trên trình duyệt của từng người học.
