@@ -168,7 +168,10 @@ img, svg { max-width: 100%; }
 
 
   /* ====== Flashcard ôn tập ====== */
-  .flash-scene { perspective: 900px; margin: 10px 0; }
+  .flash-scene { perspective: 900px; margin: 10px 0; position: relative; }
+  .flash-nav-hint { position: absolute; top: 50%; transform: translateY(-50%); font-size: 30px; font-weight: 800; color: rgba(30, 58, 138, .30); z-index: 2; pointer-events: none; line-height: 1; }
+  .flash-nav-hint.left { left: 8px; }
+  .flash-nav-hint.right { right: 8px; }
   .flash-card { position: relative; width: 100%; height: 170px; cursor: pointer; transform-style: preserve-3d; transition: transform 0.55s; }
   .flash-card.flipped { transform: rotateY(180deg); }
   .flash-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-radius: 14px; padding: 14px; text-align: center; }
@@ -203,7 +206,7 @@ img, svg { max-width: 100%; }
 <h2>📖 Ôn tập toàn bộ ngữ pháp HSK 3 <span class="badge">40 điểm · 33 bài tập</span></h2>
 <div class="sub" style="margin-bottom:8px;">Mỗi điểm có công thức, giải thích tiếng Việt, ví dụ có nghe đọc, và 1 lỗi thường gặp. Tất cả ví dụ và bài tập chỉ dùng từ 197 từ HSK 3 và từ các khóa trước.</div>
 <ul><li><b>Thì &amp; thể</b> (6 điểm): 了 — hoàn thành (V + 了) · 了 — thay đổi trạng thái (Adj + 了 / 太……了) · 着 — đang duy trì trạng thái · 过 — kinh nghiệm đã qua · 正在 / 在 — đang diễn ra · 要 — tương lai / sắp</li><li><b>Bổ ngữ</b> (4 điểm): 结果补语 (V + 完/到/见/住/对/错) · 程度补语 (V + 得 + tính từ) · 趋向补语 (V + 起来/下去/回来/进去/出来) · 可能补语 (V + 得/不 + 完/到/见/懂)</li><li><b>Câu so sánh</b> (5 điểm): 比 — so sánh hơn · 没有 — so sánh kém · 跟……一样 — bằng nhau · 越来越 — càng ngày càng · 越……越…… — càng… càng…</li><li><b>Câu chữ 把 / 被</b> (4 điểm): 把字句 (cơ bản: S + 把 + O + V) · 把字句 (với bổ ngữ kết quả: 把 + O + V + 完/好) · 被字句 (cơ bản) · 被字句 (không có tác nhân: 被 + V)</li><li><b>Phân biệt 得 / 地 / 的</b> (1 điểm): 得 / 地 / 的 — phân biệt ba chữ de</li><li><b>Liên từ &amp; cấu trúc</b> (11 điểm): 因为……所以…… · 虽然……但是…… · 如果……就…… · 只要……就…… · 不但……而且…… · 一……就…… · 除了……以外 / 除了……还…… · 一边……一边…… · 先……再/然后…… · 又……又…… · 不是……而是……</li><li><b>Trợ từ &amp; phó từ</b> (7 điểm): 是……的 (nhấn mạnh) · 连……都/也…… · 会 / 能 / 可以 / 应该 · 还是 / 或者 · 就 / 才 · 再 / 又 · 都 / 也 / 还</li><li><b>Câu đặc biệt</b> (2 điểm): 离 · 从……到…… / 给 / 对</li></ul>
-<div class="hint">Làm theo thứ tự: đọc từng điểm, rồi làm 4 bài tập cuối file. Câu nào sai sẽ tự gom vào phần Tổng kết để gửi em.</div>
+<div class="sub" style="margin-top:8px;">📌 Ngoài 40 điểm còn có mục <b>Động từ ly hợp</b> ở cuối file (sau 40 điểm, trước phần bài tập): quy tắc tách, bảng từ ly hợp của khóa, 13 từ bổ sung hay gặp và ví dụ dạng tách cho mỗi từ.</div><div class="hint">Làm theo thứ tự: đọc từng điểm, rồi làm 4 bài tập cuối file. Câu nào sai sẽ tự gom vào phần Tổng kết để gửi em.</div>
 </div>
 <div class="card"><h2>📂 Thì &amp; thể <span class="badge">6 điểm</span></h2></div>
 <div class="card">
@@ -266,15 +269,15 @@ img, svg { max-width: 100%; }
 <div>V + 过 diễn tả kinh nghiệm &#x27;đã từng làm gì đó&#x27; trong quá khứ, không gắn với một thời điểm cụ thể nào. Anh hay dùng với 以前, và phủ định là 没有 + V + 过 (chưa từng). Anh đừng nhầm với 了: 了 nói hành động đã hoàn thành vào một lúc nào đó, còn 过 nhấn mạnh &#x27;đã từng có kinh nghiệm đó&#x27;.</div>
 <div class="example">
 <div><b>我以前去过学校。</b> <button class="tts-btn" onclick="speakRate('我以前去过学校。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('我以前去过学校。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Wǒ yǐqián qù guo xuéxiào. — Trước đây anh đã từng đến Trung Quốc.</div>
+<div class="sentence-sub">Wǒ yǐqián qù guò xuéxiào. — Trước đây anh đã từng đến Trung Quốc.</div>
 </div>
 <div class="example">
 <div><b>他以前踢过足球。</b> <button class="tts-btn" onclick="speakRate('他以前踢过足球。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他以前踢过足球。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā yǐqián tī guo zúqiú. — Trước đây anh ấy đã từng đá bóng.</div>
+<div class="sentence-sub">Tā yǐqián tī guò zúqiú. — Trước đây anh ấy đã từng đá bóng.</div>
 </div>
 <div class="example">
 <div><b>我没有去过医院。</b> <button class="tts-btn" onclick="speakRate('我没有去过医院。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('我没有去过医院。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Wǒ méiyǒu qù guo yīyuàn. — Anh chưa từng đến bệnh viện.</div>
+<div class="sentence-sub">Wǒ méiyǒu qù guò yīyuàn. — Anh chưa từng đến bệnh viện.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>我昨天去过医院看病。</s><br>✅ Đúng: <b>我昨天去医院看病了。</b><br>过 chỉ kinh nghiệm &#x27;đã từng&#x27; (không gắn với thời gian cụ thể), còn chuyện xảy ra vào một thời điểm cụ thể như 昨天 thì dùng 了.</div>
 </div>
@@ -292,7 +295,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>现在下雨了，我在房间休息。</b> <button class="tts-btn" onclick="speakRate('现在下雨了，我在房间休息。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('现在下雨了，我在房间休息。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Xiànzài xià yǔ le, wǒ zài fángjiān xiūxi. — Bây giờ trời đang mưa, anh đang nghỉ ngơi trong phòng.</div>
+<div class="sentence-sub">Xiànzài xià yǔ le, wǒ zài fángjiān xiūxī. — Bây giờ trời đang mưa, anh đang nghỉ ngơi trong phòng.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>我在正在上网。</s><br>✅ Đúng: <b>我正在上网。</b><br>正在 và 在 đều diễn tả &#x27;đang&#x27;, chỉ dùng một trong hai, không dùng cả hai cùng lúc.</div>
 </div>
@@ -347,7 +350,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>他介绍得很清楚。</b> <button class="tts-btn" onclick="speakRate('他介绍得很清楚。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他介绍得很清楚。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā jièshào de hěn qīngchu. — Anh ấy giới thiệu rất rõ ràng.</div>
+<div class="sentence-sub">Tā jièshào de hěn qīngchǔ. — Anh ấy giới thiệu rất rõ ràng.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>他踢足球得很好。</s><br>✅ Đúng: <b>他踢足球踢得很好。</b><br>Khi động từ có tân ngữ, động từ phải lặp lại trước 得 (V + O + V + 得 + Adj), không được bỏ động từ thứ hai.</div>
 </div>
@@ -474,7 +477,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>他越介绍，我越清楚。</b> <button class="tts-btn" onclick="speakRate('他越介绍，我越清楚。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他越介绍，我越清楚。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā yuè jièshào, wǒ yuè qīngchu. — Anh ấy càng giới thiệu, anh càng rõ.</div>
+<div class="sentence-sub">Tā yuè jièshào, wǒ yuè qīngchǔ. — Anh ấy càng giới thiệu, anh càng rõ.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>他越踢越足球好。</s><br>✅ Đúng: <b>他踢足球越踢越好。</b><br>Trong cấu trúc 越……越……, động từ lặp lại đứng ngay sau 越, tân ngữ (足球) không chen vào giữa 越 và tính từ.</div>
 </div>
@@ -529,7 +532,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>他被要求休息。</b> <button class="tts-btn" onclick="speakRate('他被要求休息。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他被要求休息。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā bèi yāoqiú xiūxi. — Anh ấy bị yêu cầu nghỉ ngơi.</div>
+<div class="sentence-sub">Tā bèi yāoqiú xiūxī. — Anh ấy bị yêu cầu nghỉ ngơi.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>他被老师介绍。</s><br>✅ Đúng: <b>他被老师介绍了。</b><br>Câu 被 thường phải có 了 hoặc bổ ngữ sau động từ, giống câu 把, không để động từ &#x27;trơ trọi&#x27;.</div>
 </div>
@@ -562,7 +565,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>他介绍得很清楚。</b> <button class="tts-btn" onclick="speakRate('他介绍得很清楚。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他介绍得很清楚。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā jièshào de hěn qīngchu. — Anh ấy giới thiệu rất rõ ràng.</div>
+<div class="sentence-sub">Tā jièshào de hěn qīngchǔ. — Anh ấy giới thiệu rất rõ ràng.</div>
 </div>
 <div class="example">
 <div><b>他努力地跑步。</b> <button class="tts-btn" onclick="speakRate('他努力地跑步。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他努力地跑步。', 0.6)">🐢 Nghe chậm</button></div>
@@ -581,11 +584,11 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>因为他感冒了，所以他在家休息。</b> <button class="tts-btn" onclick="speakRate('因为他感冒了，所以他在家休息。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('因为他感冒了，所以他在家休息。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Yīnwèi tā gǎnmào le, suǒyǐ tā zài jiā xiūxi. — Vì anh ấy bị cảm nên anh ấy ở nhà nghỉ ngơi.</div>
+<div class="sentence-sub">Yīnwèi tā gǎnmào le, suǒyǐ tā zài jiā xiūxī. — Vì anh ấy bị cảm nên anh ấy ở nhà nghỉ ngơi.</div>
 </div>
 <div class="example">
 <div><b>因为天气很冷，所以他在房间休息。</b> <button class="tts-btn" onclick="speakRate('因为天气很冷，所以他在房间休息。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('因为天气很冷，所以他在房间休息。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Yīnwèi tiānqì hěn lěng, suǒyǐ tā zài fángjiān xiūxi. — Vì thời tiết rất lạnh nên anh ấy nghỉ ngơi trong phòng.</div>
+<div class="sentence-sub">Yīnwèi tiānqì hěn lěng, suǒyǐ tā zài fángjiān xiūxī. — Vì thời tiết rất lạnh nên anh ấy nghỉ ngơi trong phòng.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>因为他感冒了，但是他去学校了。</s><br>✅ Đúng: <b>因为他感冒了，所以他没有去学校。</b><br>因为 và 但是 không đi cùng nhau; đã dùng 因为 thì vế sau phải dùng 所以.</div>
 </div>
@@ -613,7 +616,7 @@ img, svg { max-width: 100%; }
 <div>Dùng để đặt giả thiết: nếu điều kiện ở vế 如果 xảy ra thì có kết quả ở vế 就. 就 nhấn mạnh kết quả sẽ xảy ra ngay sau điều kiện. Trong câu nói thường ngày có thể lược 如果, chỉ giữ 就. Anh đừng nhầm với 只要 (chỉ cần) — 如果 chỉ giả thiết chung, chưa nhấn mạnh điều kiện dễ hay khó.</div>
 <div class="example">
 <div><b>如果明天下雨，他就不去学校。</b> <button class="tts-btn" onclick="speakRate('如果明天下雨，他就不去学校。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('如果明天下雨，他就不去学校。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Rúguǒ míngtiān xià yǔ, tā jiù bù qù xuéxiào. — Nếu ngày mai trời mưa thì anh ấy sẽ không đến trường.</div>
+<div class="sentence-sub">Rúguǒ míngtiān xià yǔ, tā jiù bú qù xuéxiào. — Nếu ngày mai trời mưa thì anh ấy sẽ không đến trường.</div>
 </div>
 <div class="example">
 <div><b>如果你不忙，就来我家。</b> <button class="tts-btn" onclick="speakRate('如果你不忙，就来我家。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('如果你不忙，就来我家。', 0.6)">🐢 Nghe chậm</button></div>
@@ -621,7 +624,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>如果你感冒了，就在家休息。</b> <button class="tts-btn" onclick="speakRate('如果你感冒了，就在家休息。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('如果你感冒了，就在家休息。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Rúguǒ nǐ gǎnmào le, jiù zài jiā xiūxi. — Nếu anh bị cảm thì cứ ở nhà nghỉ ngơi.</div>
+<div class="sentence-sub">Rúguǒ nǐ gǎnmào le, jiù zài jiā xiūxī. — Nếu anh bị cảm thì cứ ở nhà nghỉ ngơi.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>如果明天下雨，但是他不去学校。</s><br>✅ Đúng: <b>如果明天下雨，他就不去学校。</b><br>如果 đi với 就, không đi với 但是.</div>
 </div>
@@ -653,11 +656,11 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>他老家不但热闹，而且环境很好。</b> <button class="tts-btn" onclick="speakRate('他老家不但热闹，而且环境很好。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他老家不但热闹，而且环境很好。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā lǎojiā búdàn rènao, érqiě huánjìng hěn hǎo. — Quê anh ấy không chỉ nhộn nhịp mà môi trường còn rất tốt.</div>
+<div class="sentence-sub">Tā lǎojiā búdàn rènào, érqiě huánjìng hěn hǎo. — Quê anh ấy không chỉ nhộn nhịp mà môi trường còn rất tốt.</div>
 </div>
 <div class="example">
 <div><b>天气不但暖和，而且很舒服。</b> <button class="tts-btn" onclick="speakRate('天气不但暖和，而且很舒服。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('天气不但暖和，而且很舒服。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tiānqì búdàn nuǎnhuo, érqiě hěn shūfu. — Thời tiết không chỉ ấm áp mà còn rất dễ chịu.</div>
+<div class="sentence-sub">Tiānqì búdàn nuǎnhuo, érqiě hěn shūfú. — Thời tiết không chỉ ấm áp mà còn rất dễ chịu.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>他不但会踢足球，他会拉二胡。</s><br>✅ Đúng: <b>他不但会踢足球，而且会拉二胡。</b><br>不但 phải đi với 而且, không được bỏ 而且.</div>
 </div>
@@ -667,15 +670,15 @@ img, svg { max-width: 100%; }
 <div>Diễn tả hai việc xảy ra liền nhau: vừa xong việc ở vế 一 thì ngay lập tức có việc ở vế 就. Vế 一 thường là một hành động ngắn gọn. Khác với 如果……就…… (giả thiết chưa xảy ra), 一……就…… là sự việc có thật, xảy ra ngay tức thì.</div>
 <div class="example">
 <div><b>他一感冒就发烧。</b> <button class="tts-btn" onclick="speakRate('他一感冒就发烧。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他一感冒就发烧。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā yī gǎnmào jiù fā shāo. — Anh ấy vừa bị cảm là sốt ngay.</div>
+<div class="sentence-sub">Tā yì gǎnmào jiù fā shāo. — Anh ấy vừa bị cảm là sốt ngay.</div>
 </div>
 <div class="example">
 <div><b>一下雨，他就不去学校。</b> <button class="tts-btn" onclick="speakRate('一下雨，他就不去学校。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('一下雨，他就不去学校。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Yí xià yǔ, tā jiù bù qù xuéxiào. — Trời vừa mưa là anh ấy không đến trường.</div>
+<div class="sentence-sub">Yí xià yǔ, tā jiù bú qù xuéxiào. — Trời vừa mưa là anh ấy không đến trường.</div>
 </div>
 <div class="example">
 <div><b>我一下课就去朋友家。</b> <button class="tts-btn" onclick="speakRate('我一下课就去朋友家。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('我一下课就去朋友家。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Wǒ yí xià kè jiù qù péngyou jiā. — Tôi vừa có thời gian là đến nhà bạn ngay.</div>
+<div class="sentence-sub">Wǒ yí xià kè jiù qù péngyǒu jiā. — Tôi vừa có thời gian là đến nhà bạn ngay.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>他一感冒发烧。</s><br>✅ Đúng: <b>他一感冒就发烧。</b><br>一……就…… phải có 就 ở vế sau, không được bỏ 就.</div>
 </div>
@@ -703,7 +706,7 @@ img, svg { max-width: 100%; }
 <div>Diễn tả hai hành động xảy ra đồng thời, cùng một lúc. Chủ ngữ chỉ đứng trước 一边 đầu tiên, vế sau không lặp lại chủ ngữ. Trong câu nói thường ngày có thể lược 一边 thứ hai.</div>
 <div class="example">
 <div><b>他一边休息，一边上网。</b> <button class="tts-btn" onclick="speakRate('他一边休息，一边上网。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他一边休息，一边上网。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā yìbiān xiūxi, yìbiān shàng wǎng. — Anh ấy vừa nghỉ ngơi vừa lên mạng.</div>
+<div class="sentence-sub">Tā yìbiān xiūxī, yìbiān shàng wǎng. — Anh ấy vừa nghỉ ngơi vừa lên mạng.</div>
 </div>
 <div class="example">
 <div><b>他一边打的，一边发微信。</b> <button class="tts-btn" onclick="speakRate('他一边打的，一边发微信。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他一边打的，一边发微信。', 0.6)">🐢 Nghe chậm</button></div>
@@ -725,11 +728,11 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>他先休息，然后去跑步。</b> <button class="tts-btn" onclick="speakRate('他先休息，然后去跑步。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他先休息，然后去跑步。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā xiān xiūxi, ránhòu qù pǎobù. — Anh ấy nghỉ ngơi trước, sau đó đi chạy bộ.</div>
+<div class="sentence-sub">Tā xiān xiūxī, ránhòu qù pǎobù. — Anh ấy nghỉ ngơi trước, sau đó đi chạy bộ.</div>
 </div>
 <div class="example">
 <div><b>他先打针，然后休息。</b> <button class="tts-btn" onclick="speakRate('他先打针，然后休息。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他先打针，然后休息。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā xiān dǎ zhēn, ránhòu xiūxi. — Anh ấy tiêm trước, sau đó nghỉ ngơi.</div>
+<div class="sentence-sub">Tā xiān dǎ zhēn, ránhòu xiūxī. — Anh ấy tiêm trước, sau đó nghỉ ngơi.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>他再去学校，先去商店。</s><br>✅ Đúng: <b>他先去学校，再去商店。</b><br>先 phải đứng trước hành động làm trước, 再 đứng sau — đừng đảo thứ tự.</div>
 </div>
@@ -743,7 +746,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>商店又大又热闹。</b> <button class="tts-btn" onclick="speakRate('商店又大又热闹。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('商店又大又热闹。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Shāngdiàn yòu dà yòu rènao. — Cửa hàng vừa to vừa nhộn nhịp.</div>
+<div class="sentence-sub">Shāngdiàn yòu dà yòu rènào. — Cửa hàng vừa to vừa nhộn nhịp.</div>
 </div>
 <div class="example">
 <div><b>他又会踢足球，又会拉二胡。</b> <button class="tts-btn" onclick="speakRate('他又会踢足球，又会拉二胡。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他又会踢足球，又会拉二胡。', 0.6)">🐢 Nghe chậm</button></div>
@@ -784,7 +787,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>他是在房间休息的。</b> <button class="tts-btn" onclick="speakRate('他是在房间休息的。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他是在房间休息的。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā shì zài fángjiān xiūxi de. — Anh ấy đã nghỉ ngơi trong phòng (nhấn mạnh: trong phòng).</div>
+<div class="sentence-sub">Tā shì zài fángjiān xiūxī de. — Anh ấy đã nghỉ ngơi trong phòng (nhấn mạnh: trong phòng).</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>他是明天去学校的。</s><br>✅ Đúng: <b>他是昨天去学校的。</b><br>是……的 chỉ nhấn mạnh việc đã xảy ra, không dùng cho việc trong tương lai (明天).</div>
 </div>
@@ -816,11 +819,11 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>他感冒了，不能去跑步，可以在家休息。</b> <button class="tts-btn" onclick="speakRate('他感冒了，不能去跑步，可以在家休息。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他感冒了，不能去跑步，可以在家休息。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā gǎnmào le, bù néng qù pǎobù, kěyǐ zài jiā xiūxi. — Anh ấy bị cảm, không thể đi chạy bộ, nhưng có thể ở nhà nghỉ ngơi.</div>
+<div class="sentence-sub">Tā gǎnmào le, bù néng qù pǎobù, kěyǐ zài jiā xiūxī. — Anh ấy bị cảm, không thể đi chạy bộ, nhưng có thể ở nhà nghỉ ngơi.</div>
 </div>
 <div class="example">
 <div><b>他应该休息，不应该去跑步。</b> <button class="tts-btn" onclick="speakRate('他应该休息，不应该去跑步。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他应该休息，不应该去跑步。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā yīnggāi xiūxi, bù yīnggāi qù pǎobù. — Anh ấy nên nghỉ ngơi, không nên đi chạy bộ.</div>
+<div class="sentence-sub">Tā yīnggāi xiūxī, bù yīnggāi qù pǎobù. — Anh ấy nên nghỉ ngơi, không nên đi chạy bộ.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>他感冒了，但是他会去跑步。</s><br>✅ Đúng: <b>他感冒了，他不能去跑步。</b><br>会 chỉ kỹ năng đã học hoặc việc tương lai; bị ốm nên không thể chạy thì dùng 不能, không dùng 会.</div>
 </div>
@@ -830,7 +833,7 @@ img, svg { max-width: 100%; }
 <div>还是 dùng trong câu hỏi lựa chọn: hỏi người nghe chọn A hay B. 或者 dùng trong câu trần thuật: nêu ra các lựa chọn mà không hỏi ai cả. Anh nhớ: đừng dùng 或者 trong câu hỏi lựa chọn, và đừng dùng 还是 trong câu kể.</div>
 <div class="example">
 <div><b>你去学校还是去商店？</b> <button class="tts-btn" onclick="speakRate('你去学校还是去商店？', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('你去学校还是去商店？', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Nǐ qù xuéxiào háishi qù shāngdiàn? — Anh đến trường hay đến cửa hàng?</div>
+<div class="sentence-sub">Nǐ qù xuéxiào háishì qù shāngdiàn? — Anh đến trường hay đến cửa hàng?</div>
 </div>
 <div class="example">
 <div><b>他或者去跑步，或者去踢足球。</b> <button class="tts-btn" onclick="speakRate('他或者去跑步，或者去踢足球。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他或者去跑步，或者去踢足球。', 0.6)">🐢 Nghe chậm</button></div>
@@ -838,7 +841,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="example">
 <div><b>你去医院还是在家休息？</b> <button class="tts-btn" onclick="speakRate('你去医院还是在家休息？', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('你去医院还是在家休息？', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Nǐ qù yīyuàn háishi zài jiā xiūxi? — Anh đến bệnh viện hay ở nhà nghỉ ngơi?</div>
+<div class="sentence-sub">Nǐ qù yīyuàn háishì zài jiā xiūxī? — Anh đến bệnh viện hay ở nhà nghỉ ngơi?</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>你去学校或者去商店？</s><br>✅ Đúng: <b>你去学校还是去商店？</b><br>Câu hỏi lựa chọn dùng 还是, không dùng 或者.</div>
 </div>
@@ -921,17 +924,352 @@ img, svg { max-width: 100%; }
 <div>Ba cấu trúc trong một điểm vì đều liên quan đến &#x27;hướng tới ai, cái gì&#x27;. 从……到…… chỉ phạm vi từ A đến B, có thể là nơi chốn hoặc thời gian. 给 + người + đồ vật (hoặc động từ) chỉ người nhận — cho hay tặng ai cái gì, gửi gì cho ai; còn 对 + người chỉ đối tượng mà hành động hướng tới — tốt với ai, nói với ai. Anh nhớ: 给 cần có đồ vật hoặc hành động gửi/cho đi sau người nhận, còn 对 thì không — 对 + người rồi đến động từ hoặc tính từ.</div>
 <div class="example">
 <div><b>从今天到明天，他都在家休息。</b> <button class="tts-btn" onclick="speakRate('从今天到明天，他都在家休息。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('从今天到明天，他都在家休息。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Cóng jīntiān dào míngtiān, tā dōu zài jiā xiūxi. — Từ hôm nay đến ngày mai, anh ấy đều ở nhà nghỉ ngơi.</div>
+<div class="sentence-sub">Cóng jīntiān dào míngtiān, tā dōu zài jiā xiūxī. — Từ hôm nay đến ngày mai, anh ấy đều ở nhà nghỉ ngơi.</div>
 </div>
 <div class="example">
 <div><b>他给朋友发短信。</b> <button class="tts-btn" onclick="speakRate('他给朋友发短信。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他给朋友发短信。', 0.6)">🐢 Nghe chậm</button></div>
-<div class="sentence-sub">Tā gěi péngyou fā duǎnxìn. — Anh ấy gửi tin nhắn cho bạn.</div>
+<div class="sentence-sub">Tā gěi péngyǒu fā duǎnxìn. — Anh ấy gửi tin nhắn cho bạn.</div>
 </div>
 <div class="example">
 <div><b>他对同学很好。</b> <button class="tts-btn" onclick="speakRate('他对同学很好。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他对同学很好。', 0.6)">🐢 Nghe chậm</button></div>
 <div class="sentence-sub">Tā duì tóngxué hěn hǎo. — Anh ấy rất tốt với thầy giáo.</div>
 </div>
 <div class="mistake">⚠️ <b>Lỗi thường gặp:</b><br>❌ Sai: <s>他给老师很好。</s><br>✅ Đúng: <b>他对老师很好。</b><br>Nói &#x27;tốt với ai&#x27; thì dùng 对, không dùng 给 (给 chỉ dùng khi cho/tặng đồ hoặc gửi thứ gì cho ai).</div>
+</div>
+<div class="card">
+<h2>📌 Động từ ly hợp (离合动词) <span class="badge">Ngoài 40 điểm ngữ pháp</span></h2>
+<div><b>Quy tắc chung:</b> Động từ ly hợp là động từ + tân ngữ gộp thành một từ (vd 洗澡 = 洗 + 澡, 睡觉 = 睡 + 觉). Khi thêm 了 / 过 hoặc số từ thì phải chèn <b>GIỮA hai phần</b>, không đặt sau cả từ — không nói *洗澡了, mà nói 洗了个澡; không nói *睡觉了, mà nói 睡了一觉.</div>
+<h3>Các từ ly hợp trong từ vựng của khóa</h3>
+<table><tr><th>Từ</th><th>Pinyin</th><th>Nghĩa</th><th>Bài / Ngày dạy</th></tr>
+<tr><td><b>担心</b> (担 + 心)</td><td>dānxīn</td><td>lo lắng; lo âu</td><td>Bài 2 · Day 6</td></tr>
+<tr><td><b>上网</b> (上 + 网)</td><td>shàngwǎng</td><td>lên mạng; lướt mạng</td><td>Bài 2 · Day 8</td></tr>
+<tr><td><b>发烧</b> (发 + 烧)</td><td>fāshāo</td><td>bị sốt</td><td>Bài 3 · Day 10</td></tr>
+<tr><td><b>打针</b> (打 + 针)</td><td>dǎzhēn</td><td>tiêm (thuốc)</td><td>Bài 3 · Day 10</td></tr>
+<tr><td><b>看病</b> (看 + 病)</td><td>kànbìng</td><td>đi khám bệnh</td><td>Bài 3 · Day 11</td></tr>
+<tr><td><b>请客</b> (请 + 客)</td><td>qǐngkè</td><td>mời khách (ăn uống)</td><td>Bài 4 · Day 16</td></tr>
+<tr><td><b>跑步</b> (跑 + 步)</td><td>pǎobù</td><td>chạy bộ</td><td>Bài 5 · Day 19</td></tr>
+<tr><td><b>下雨</b> (下 + 雨)</td><td>xiàyǔ</td><td>mưa, trời mưa</td><td>Bài 9 · Day 35</td></tr>
+<tr><td><b>下雪</b> (下 + 雪)</td><td>xiàxuě</td><td>tuyết rơi</td><td>Bài 9 · Day 35</td></tr>
+<tr><td><b>加油</b> (加 + 油)</td><td>jiāyóu</td><td>cố lên!; đổ xăng</td><td>Bài 10 · Day 38</td></tr>
+</table>
+<h3>Từ bổ sung hay gặp</h3>
+<div class="sub" style="margin-bottom:8px;">13 từ bổ sung hay gặp — không nằm trong từ vựng của khóa, chỉ để tham khảo cách tách.</div>
+<table><tr><th>Từ</th><th>Pinyin</th><th>Nghĩa</th><th>Dạng tách</th></tr>
+<tr><td><b>洗澡</b></td><td>xǐzǎo</td><td>tắm</td><td>洗 + 澡</td></tr>
+<tr><td><b>帮忙</b></td><td>bāngmáng</td><td>giúp đỡ</td><td>帮 + 忙</td></tr>
+<tr><td><b>见面</b></td><td>jiànmiàn</td><td>gặp mặt</td><td>见 + 面</td></tr>
+<tr><td><b>生气</b></td><td>shēngqì</td><td>giận</td><td>生 + 气</td></tr>
+<tr><td><b>生病</b></td><td>shēngbìng</td><td>ốm</td><td>生 + 病</td></tr>
+<tr><td><b>说话</b></td><td>shuōhuà</td><td>nói chuyện</td><td>说 + 话</td></tr>
+<tr><td><b>吃饭</b></td><td>chīfàn</td><td>ăn cơm</td><td>吃 + 饭</td></tr>
+<tr><td><b>聊天</b></td><td>liáotiān</td><td>trò chuyện</td><td>聊 + 天</td></tr>
+<tr><td><b>游泳</b></td><td>yóuyǒng</td><td>bơi</td><td>游 + 泳</td></tr>
+<tr><td><b>散步</b></td><td>sànbù</td><td>đi dạo</td><td>散 + 步</td></tr>
+<tr><td><b>画画</b></td><td>huàhuà</td><td>vẽ tranh</td><td>画 + 画</td></tr>
+<tr><td><b>离婚</b></td><td>líhūn</td><td>ly hôn</td><td>离 + 婚</td></tr>
+<tr><td><b>上班</b></td><td>shàngbān</td><td>đi làm</td><td>上 + 班</td></tr>
+</table>
+<h3>Ví dụ dạng tách</h3>
+<div class="sub" style="margin-bottom:8px;">Mỗi từ dưới đây có 2–3 câu ví dụ dạng tách — bấm 🔊 để nghe.</div>
+<div style="margin-top:8px;"><b>担心</b> (dānxīn) — tách thành 担 + 心:</div>
+<div class="example">
+<div><b>他担了心，很长时间睡不着觉。</b> <button class="tts-btn" onclick="speakRate('他担了心，很长时间睡不着觉。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他担了心，很长时间睡不着觉。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā dān le xīn, hěn cháng shíjiān shuì bù zháo jiào. — Anh ấy lo lắng, rất lâu không ngủ được.</div>
+</div>
+<div class="example">
+<div><b>他担过心，现在不担心了。</b> <button class="tts-btn" onclick="speakRate('他担过心，现在不担心了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他担过心，现在不担心了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā dān guò xīn, xiànzài bù dānxīn le. — Anh ấy đã từng lo lắng, bây giờ không lo nữa.</div>
+</div>
+<div class="example">
+<div><b>你别担心，担了心也睡不着觉。</b> <button class="tts-btn" onclick="speakRate('你别担心，担了心也睡不着觉。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('你别担心，担了心也睡不着觉。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Nǐ bié dānxīn, dān le xīn yě shuì bù zháo jiào. — Bạn đừng lo lắng, lo rồi cũng không ngủ được.</div>
+</div>
+<div style="margin-top:8px;"><b>上网</b> (shàngwǎng) — tách thành 上 + 网:</div>
+<div class="example">
+<div><b>他喜欢上网，昨天上了两次网。</b> <button class="tts-btn" onclick="speakRate('他喜欢上网，昨天上了两次网。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他喜欢上网，昨天上了两次网。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā xǐhuān shàngwǎng, zuótiān shàng le liǎng cì wǎng. — Anh ấy thích lên mạng, hôm qua đã lên mạng hai lần.</div>
+</div>
+<div class="example">
+<div><b>他上了网，你可以发短信。</b> <button class="tts-btn" onclick="speakRate('他上了网，你可以发短信。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他上了网，你可以发短信。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shàng le wǎng, nǐ kě yǐ fā duǎn xìn. — Anh ấy đã lên mạng, bạn có thể gửi tin nhắn.</div>
+</div>
+<div class="example">
+<div><b>他上了一次网，就去睡觉了。</b> <button class="tts-btn" onclick="speakRate('他上了一次网，就去睡觉了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他上了一次网，就去睡觉了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shàng le yí cì wǎng, jiù qù shuìjiào le. — Anh ấy lên mạng một lần rồi đi ngủ.</div>
+</div>
+<div style="margin-top:8px;"><b>发烧</b> (fāshāo) — tách thành 发 + 烧:</div>
+<div class="example">
+<div><b>他发了烧，今天没有去学校。</b> <button class="tts-btn" onclick="speakRate('他发了烧，今天没有去学校。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他发了烧，今天没有去学校。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā fā le shāo, jīntiān méiyǒu qù xuéxiào. — Anh ấy bị sốt, hôm nay không đi học.</div>
+</div>
+<div class="example">
+<div><b>孩子发了高烧，妈妈很担心他。</b> <button class="tts-btn" onclick="speakRate('孩子发了高烧，妈妈很担心他。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('孩子发了高烧，妈妈很担心他。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Háizi fā le gāoshāo, māma hěn dānxīn tā. — Đứa trẻ sốt cao, mẹ rất lo cho nó.</div>
+</div>
+<div class="example">
+<div><b>他发过烧，现在很好。</b> <button class="tts-btn" onclick="speakRate('他发过烧，现在很好。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他发过烧，现在很好。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā fā guò shāo, xiànzài hěn hǎo. — Anh ấy đã từng bị sốt, bây giờ rất khỏe.</div>
+</div>
+<div style="margin-top:8px;"><b>打针</b> (dǎzhēn) — tách thành 打 + 针:</div>
+<div class="example">
+<div><b>他去医院打了针，现在很疼。</b> <button class="tts-btn" onclick="speakRate('他去医院打了针，现在很疼。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他去医院打了针，现在很疼。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā qù yīyuàn dǎ le zhēn, xiànzài hěn téng. — Anh ấy đến bệnh viện tiêm, bây giờ rất đau.</div>
+</div>
+<div class="example">
+<div><b>他打了一针，就不疼了。</b> <button class="tts-btn" onclick="speakRate('他打了一针，就不疼了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他打了一针，就不疼了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā dǎ le yì zhēn, jiù bù téng le. — Anh ấy tiêm một mũi rồi không đau nữa.</div>
+</div>
+<div class="example">
+<div><b>他打过两次针，现在不疼了。</b> <button class="tts-btn" onclick="speakRate('他打过两次针，现在不疼了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他打过两次针，现在不疼了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā dǎ guò liǎng cì zhēn, xiànzài bù téng le. — Anh ấy đã tiêm hai lần, bây giờ không đau nữa.</div>
+</div>
+<div style="margin-top:8px;"><b>看病</b> (kànbìng) — tách thành 看 + 病:</div>
+<div class="example">
+<div><b>他去医院看了病，现在很舒服。</b> <button class="tts-btn" onclick="speakRate('他去医院看了病，现在很舒服。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他去医院看了病，现在很舒服。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā qù yīyuàn kàn le bìng, xiànzài hěn shūfú. — Anh ấy đến bệnh viện khám bệnh, bây giờ rất dễ chịu.</div>
+</div>
+<div class="example">
+<div><b>他看了病，今天没有去学校。</b> <button class="tts-btn" onclick="speakRate('他看了病，今天没有去学校。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他看了病，今天没有去学校。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā kàn le bìng, jīntiān méiyǒu qù xuéxiào. — Anh ấy đã đi khám bệnh, hôm nay không đi học.</div>
+</div>
+<div class="example">
+<div><b>妈妈带他去看了病。</b> <button class="tts-btn" onclick="speakRate('妈妈带他去看了病。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('妈妈带他去看了病。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Māma dài tā qù kàn le bìng. — Mẹ đưa anh ấy đi khám bệnh.</div>
+</div>
+<div style="margin-top:8px;"><b>请客</b> (qǐngkè) — tách thành 请 + 客:</div>
+<div class="example">
+<div><b>他请了客，大家都很高兴。</b> <button class="tts-btn" onclick="speakRate('他请了客，大家都很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他请了客，大家都很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā qǐng le kè, dàjiā dōu hěn gāoxìng. — Anh ấy đã mời khách, mọi người đều rất vui.</div>
+</div>
+<div class="example">
+<div><b>他请过两次客，朋友都很高兴。</b> <button class="tts-btn" onclick="speakRate('他请过两次客，朋友都很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他请过两次客，朋友都很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā qǐng guò liǎng cì kè, péngyǒu dōu hěn gāoxìng. — Anh ấy đã mời khách hai lần, bạn bè đều rất vui.</div>
+</div>
+<div class="example">
+<div><b>他请客，明天请一次客。</b> <button class="tts-btn" onclick="speakRate('他请客，明天请一次客。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他请客，明天请一次客。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā qǐngkè, míngtiān qǐng yí cì kè. — Anh ấy mời khách, ngày mai mời khách một lần.</div>
+</div>
+<div style="margin-top:8px;"><b>跑步</b> (pǎobù) — tách thành 跑 + 步:</div>
+<div class="example">
+<div><b>他今天跑了步，现在很舒服。</b> <button class="tts-btn" onclick="speakRate('他今天跑了步，现在很舒服。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他今天跑了步，现在很舒服。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā jīntiān pǎo le bù, xiànzài hěn shūfú. — Hôm nay anh ấy đã chạy bộ, bây giờ rất dễ chịu.</div>
+</div>
+<div class="example">
+<div><b>他跑过步，现在很累。</b> <button class="tts-btn" onclick="speakRate('他跑过步，现在很累。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他跑过步，现在很累。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā pǎo guò bù, xiànzài hěn lèi. — Anh ấy đã từng chạy bộ, bây giờ rất mệt.</div>
+</div>
+<div class="example">
+<div><b>他不喜欢跑步，跑了一次步就很累。</b> <button class="tts-btn" onclick="speakRate('他不喜欢跑步，跑了一次步就很累。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他不喜欢跑步，跑了一次步就很累。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā bù xǐhuān pǎobù, pǎo le yí cì bù jiù hěn lèi. — Anh ấy không thích chạy bộ, chạy một lần là rất mệt.</div>
+</div>
+<div style="margin-top:8px;"><b>下雨</b> (xiàyǔ) — tách thành 下 + 雨:</div>
+<div class="example">
+<div><b>今天下了雨，天气很冷。</b> <button class="tts-btn" onclick="speakRate('今天下了雨，天气很冷。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('今天下了雨，天气很冷。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Jīntiān xià le yǔ, tiānqì hěn lěng. — Hôm nay trời mưa, thời tiết rất lạnh.</div>
+</div>
+<div class="example">
+<div><b>昨天下了大雨，今天天气很好。</b> <button class="tts-btn" onclick="speakRate('昨天下了大雨，今天天气很好。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('昨天下了大雨，今天天气很好。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Zuótiān xià le dàyǔ, jīntiān tiānqì hěn hǎo. — Hôm qua mưa to, hôm nay thời tiết rất đẹp.</div>
+</div>
+<div class="example">
+<div><b>今天下了小雨，明天可能不下雨。</b> <button class="tts-btn" onclick="speakRate('今天下了小雨，明天可能不下雨。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('今天下了小雨，明天可能不下雨。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Jīntiān xià le xiǎoyǔ, míngtiān kěnéng bú xià yǔ. — Hôm nay mưa nhỏ, ngày mai có thể không mưa.</div>
+</div>
+<div style="margin-top:8px;"><b>下雪</b> (xiàxuě) — tách thành 下 + 雪:</div>
+<div class="example">
+<div><b>昨天下了雪，今天天气很冷。</b> <button class="tts-btn" onclick="speakRate('昨天下了雪，今天天气很冷。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('昨天下了雪，今天天气很冷。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Zuótiān xià le xuě, jīntiān tiānqì hěn lěng. — Hôm qua tuyết rơi, hôm nay thời tiết rất lạnh.</div>
+</div>
+<div class="example">
+<div><b>今天下了大雪，孩子很高兴。</b> <button class="tts-btn" onclick="speakRate('今天下了大雪，孩子很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('今天下了大雪，孩子很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Jīntiān xià le dàxuě, háizi hěn gāoxìng. — Hôm nay tuyết rơi nhiều, đứa trẻ rất vui.</div>
+</div>
+<div class="example">
+<div><b>冬天下了两次雪，天气很冷。</b> <button class="tts-btn" onclick="speakRate('冬天下了两次雪，天气很冷。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('冬天下了两次雪，天气很冷。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Dōngtiān xià le liǎng cì xuě, tiānqì hěn lěng. — Mùa đông tuyết rơi hai lần, thời tiết rất lạnh.</div>
+</div>
+<div style="margin-top:8px;"><b>加油</b> (jiāyóu) — tách thành 加 + 油:</div>
+<div class="example">
+<div><b>汽车没有油了，他去加了油。</b> <button class="tts-btn" onclick="speakRate('汽车没有油了，他去加了油。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('汽车没有油了，他去加了油。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Qìchē méiyǒu yóu le, tā qù jiā le yóu. — Ô tô hết xăng rồi, anh ấy đi đổ xăng.</div>
+</div>
+<div class="example">
+<div><b>他去加油站加了油。</b> <button class="tts-btn" onclick="speakRate('他去加油站加了油。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他去加油站加了油。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā qù jiāyóu zhàn jiā le yóu. — Anh ấy đến trạm xăng đổ xăng.</div>
+</div>
+<div class="example">
+<div><b>他加过两次油，现在汽车有油了。</b> <button class="tts-btn" onclick="speakRate('他加过两次油，现在汽车有油了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他加过两次油，现在汽车有油了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā jiā guò liǎng cì yóu, xiànzài qìchē yǒu yóu le. — Anh ấy đã đổ xăng hai lần, bây giờ ô tô có xăng rồi.</div>
+</div>
+<div style="margin-top:8px;"><b>洗澡</b> (xǐzǎo) — tách thành 洗 + 澡:</div>
+<div class="example">
+<div><b>他喜欢洗澡，今天洗了个澡就去睡觉了。</b> <button class="tts-btn" onclick="speakRate('他喜欢洗澡，今天洗了个澡就去睡觉了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他喜欢洗澡，今天洗了个澡就去睡觉了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā xǐhuān xǐzǎo, jīntiān xǐ le gè zǎo jiù qù shuìjiào le. — Anh ấy thích tắm, hôm nay tắm xong rồi đi ngủ.</div>
+</div>
+<div class="example">
+<div><b>他洗了一个澡，现在很舒服。</b> <button class="tts-btn" onclick="speakRate('他洗了一个澡，现在很舒服。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他洗了一个澡，现在很舒服。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā xǐ le yí gè zǎo, xiànzài hěn shūfú. — Anh ấy đã tắm một lần, bây giờ rất dễ chịu.</div>
+</div>
+<div class="example">
+<div><b>他洗过澡，现在去睡觉。</b> <button class="tts-btn" onclick="speakRate('他洗过澡，现在去睡觉。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他洗过澡，现在去睡觉。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā xǐ guò zǎo, xiànzài qù shuìjiào. — Anh ấy đã từng tắm, bây giờ đi ngủ.</div>
+</div>
+<div style="margin-top:8px;"><b>帮忙</b> (bāngmáng) — tách thành 帮 + 忙:</div>
+<div class="example">
+<div><b>他帮了我一个忙，我很高兴。</b> <button class="tts-btn" onclick="speakRate('他帮了我一个忙，我很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他帮了我一个忙，我很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā bāng le wǒ yí gè máng, wǒ hěn gāoxìng. — Anh ấy đã giúp tôi một việc, tôi rất vui.</div>
+</div>
+<div class="example">
+<div><b>你可以帮我一个忙。</b> <button class="tts-btn" onclick="speakRate('你可以帮我一个忙。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('你可以帮我一个忙。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Nǐ kěyǐ bāng wǒ yí gè máng. — Bạn có thể giúp tôi một việc.</div>
+</div>
+<div class="example">
+<div><b>他帮了我两次忙，我很高兴。</b> <button class="tts-btn" onclick="speakRate('他帮了我两次忙，我很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他帮了我两次忙，我很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā bāng le wǒ liǎng cì máng, wǒ hěn gāoxìng. — Anh ấy đã giúp tôi hai lần, tôi rất vui.</div>
+</div>
+<div style="margin-top:8px;"><b>见面</b> (jiànmiàn) — tách thành 见 + 面:</div>
+<div class="example">
+<div><b>他见了朋友，今天见了一次面。</b> <button class="tts-btn" onclick="speakRate('他见了朋友，今天见了一次面。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他见了朋友，今天见了一次面。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā jiàn le péngyǒu, jīntiān jiàn le yí cì miàn. — Anh ấy đã gặp bạn, hôm nay gặp mặt một lần.</div>
+</div>
+<div class="example">
+<div><b>他见过两次面，今天见了面。</b> <button class="tts-btn" onclick="speakRate('他见过两次面，今天见了面。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他见过两次面，今天见了面。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā jiàn guò liǎng cì miàn, jīntiān jiàn le miàn. — Anh ấy đã gặp mặt hai lần, hôm nay đã gặp mặt.</div>
+</div>
+<div class="example">
+<div><b>他见了三次面，现在很高兴。</b> <button class="tts-btn" onclick="speakRate('他见了三次面，现在很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他见了三次面，现在很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā jiàn le sān cì miàn, xiànzài hěn gāoxìng. — Anh ấy đã gặp mặt ba lần, bây giờ rất vui.</div>
+</div>
+<div style="margin-top:8px;"><b>生气</b> (shēngqì) — tách thành 生 + 气:</div>
+<div class="example">
+<div><b>他生了气，不去学校了。</b> <button class="tts-btn" onclick="speakRate('他生了气，不去学校了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他生了气，不去学校了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shēng le qì, bú qù xuéxiào le. — Anh ấy giận rồi, không đi học nữa.</div>
+</div>
+<div class="example">
+<div><b>他生了气，妈妈去吃饭了。</b> <button class="tts-btn" onclick="speakRate('他生了气，妈妈去吃饭了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他生了气，妈妈去吃饭了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shēng le qì, mā mā qù chī fàn le. — Anh ấy giận rồi, mẹ đi ăn cơm.</div>
+</div>
+<div class="example">
+<div><b>他生过一次气，现在不生气了。</b> <button class="tts-btn" onclick="speakRate('他生过一次气，现在不生气了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他生过一次气，现在不生气了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shēng guò yí cì qì, xiànzài bù shēngqì le. — Anh ấy đã từng giận một lần, bây giờ không giận nữa.</div>
+</div>
+<div style="margin-top:8px;"><b>生病</b> (shēngbìng) — tách thành 生 + 病:</div>
+<div class="example">
+<div><b>他生了病，今天没有去学校。</b> <button class="tts-btn" onclick="speakRate('他生了病，今天没有去学校。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他生了病，今天没有去学校。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shēng le bìng, jīntiān méiyǒu qù xuéxiào. — Anh ấy bị ốm, hôm nay không đi học.</div>
+</div>
+<div class="example">
+<div><b>他生过病，现在很舒服。</b> <button class="tts-btn" onclick="speakRate('他生过病，现在很舒服。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他生过病，现在很舒服。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shēng guò bìng, xiànzài hěn shūfú. — Anh ấy đã từng bị ốm, bây giờ rất dễ chịu.</div>
+</div>
+<div class="example">
+<div><b>孩子生了病，妈妈很担心他。</b> <button class="tts-btn" onclick="speakRate('孩子生了病，妈妈很担心他。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('孩子生了病，妈妈很担心他。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Háizi shēng le bìng, māma hěn dānxīn tā. — Đứa trẻ bị ốm, mẹ rất lo cho nó.</div>
+</div>
+<div style="margin-top:8px;"><b>说话</b> (shuōhuà) — tách thành 说 + 话:</div>
+<div class="example">
+<div><b>老师说了话，学生都很高兴。</b> <button class="tts-btn" onclick="speakRate('老师说了话，学生都很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('老师说了话，学生都很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Lǎo shī shuō le huà, xué shēng dōu hěn gāo xìng. — Thầy đã nói chuyện, học sinh đều rất vui.</div>
+</div>
+<div class="example">
+<div><b>他说了话，就去睡觉了。</b> <button class="tts-btn" onclick="speakRate('他说了话，就去睡觉了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他说了话，就去睡觉了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shuō le huà, jiù qù shuìjiào le. — Anh ấy nói chuyện xong rồi đi ngủ.</div>
+</div>
+<div class="example">
+<div><b>他说过一次话，现在不说话了。</b> <button class="tts-btn" onclick="speakRate('他说过一次话，现在不说话了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他说过一次话，现在不说话了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shuō guò yí cì huà, xiànzài bù shuōhuà le. — Anh ấy đã từng nói chuyện một lần, bây giờ không nói nữa.</div>
+</div>
+<div style="margin-top:8px;"><b>吃饭</b> (chīfàn) — tách thành 吃 + 饭:</div>
+<div class="example">
+<div><b>他吃了饭，就去学校了。</b> <button class="tts-btn" onclick="speakRate('他吃了饭，就去学校了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他吃了饭，就去学校了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā chī le fàn, jiù qù xuéxiào le. — Anh ấy ăn cơm xong rồi đi học.</div>
+</div>
+<div class="example">
+<div><b>他吃过饭，现在去睡觉。</b> <button class="tts-btn" onclick="speakRate('他吃过饭，现在去睡觉。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他吃过饭，现在去睡觉。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā chī guò fàn, xiànzài qù shuìjiào. — Anh ấy đã từng ăn cơm, bây giờ đi ngủ.</div>
+</div>
+<div class="example">
+<div><b>他吃了饭，朋友也吃了饭。</b> <button class="tts-btn" onclick="speakRate('他吃了饭，朋友也吃了饭。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他吃了饭，朋友也吃了饭。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā chī le fàn, péngyǒu yě chī le fàn. — Anh ấy đã ăn cơm, bạn cũng đã ăn cơm.</div>
+</div>
+<div style="margin-top:8px;"><b>聊天</b> (liáotiān) — tách thành 聊 + 天:</div>
+<div class="example">
+<div><b>他聊了天，就去睡觉了。</b> <button class="tts-btn" onclick="speakRate('他聊了天，就去睡觉了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他聊了天，就去睡觉了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā liáo le tiān, jiù qù shuìjiào le. — Anh ấy trò chuyện xong rồi đi ngủ.</div>
+</div>
+<div class="example">
+<div><b>他聊了两次天，很高兴。</b> <button class="tts-btn" onclick="speakRate('他聊了两次天，很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他聊了两次天，很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā liáo le liǎng cì tiān, hěn gāoxìng. — Anh ấy đã trò chuyện hai lần, rất vui.</div>
+</div>
+<div class="example">
+<div><b>他聊过天，现在去学校。</b> <button class="tts-btn" onclick="speakRate('他聊过天，现在去学校。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他聊过天，现在去学校。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā liáo guò tiān, xiànzài qù xuéxiào. — Anh ấy đã từng trò chuyện, bây giờ đi học.</div>
+</div>
+<div style="margin-top:8px;"><b>游泳</b> (yóuyǒng) — tách thành 游 + 泳:</div>
+<div class="example">
+<div><b>他游了泳，现在很舒服。</b> <button class="tts-btn" onclick="speakRate('他游了泳，现在很舒服。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他游了泳，现在很舒服。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā yóu le yǒng, xiànzài hěn shūfú. — Anh ấy đã bơi, bây giờ rất dễ chịu.</div>
+</div>
+<div class="example">
+<div><b>他游过一次泳，现在很累。</b> <button class="tts-btn" onclick="speakRate('他游过一次泳，现在很累。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他游过一次泳，现在很累。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā yóu guò yí cì yǒng, xiànzài hěn lèi. — Anh ấy đã từng bơi một lần, bây giờ rất mệt.</div>
+</div>
+<div class="example">
+<div><b>他喜欢游泳，今天游了两次泳。</b> <button class="tts-btn" onclick="speakRate('他喜欢游泳，今天游了两次泳。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他喜欢游泳，今天游了两次泳。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā xǐhuān yóuyǒng, jīntiān yóu le liǎng cì yǒng. — Anh ấy thích bơi, hôm nay đã bơi hai lần.</div>
+</div>
+<div style="margin-top:8px;"><b>散步</b> (sànbù) — tách thành 散 + 步:</div>
+<div class="example">
+<div><b>他散了步，就去睡觉了。</b> <button class="tts-btn" onclick="speakRate('他散了步，就去睡觉了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他散了步，就去睡觉了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā sàn le bù, jiù qù shuìjiào le. — Anh ấy đi dạo xong rồi đi ngủ.</div>
+</div>
+<div class="example">
+<div><b>他散过步，现在很舒服。</b> <button class="tts-btn" onclick="speakRate('他散过步，现在很舒服。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他散过步，现在很舒服。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā sàn guò bù, xiànzài hěn shūfú. — Anh ấy đã từng đi dạo, bây giờ rất dễ chịu.</div>
+</div>
+<div class="example">
+<div><b>他喜欢散步，今天散了两次步。</b> <button class="tts-btn" onclick="speakRate('他喜欢散步，今天散了两次步。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他喜欢散步，今天散了两次步。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā xǐhuān sànbù, jīntiān sàn le liǎng cì bù. — Anh ấy thích đi dạo, hôm nay đã đi dạo hai lần.</div>
+</div>
+<div style="margin-top:8px;"><b>画画</b> (huàhuà) — tách thành 画 + 画:</div>
+<div class="example">
+<div><b>他画了画，大家都很高兴。</b> <button class="tts-btn" onclick="speakRate('他画了画，大家都很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他画了画，大家都很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā huà le huà, dàjiā dōu hěn gāoxìng. — Anh ấy đã vẽ tranh, mọi người đều rất vui.</div>
+</div>
+<div class="example">
+<div><b>他画过画，现在去睡觉。</b> <button class="tts-btn" onclick="speakRate('他画过画，现在去睡觉。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他画过画，现在去睡觉。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā huà guò huà, xiànzài qù shuìjiào. — Anh ấy đã từng vẽ tranh, bây giờ đi ngủ.</div>
+</div>
+<div class="example">
+<div><b>他喜欢画画，今天画了两次画。</b> <button class="tts-btn" onclick="speakRate('他喜欢画画，今天画了两次画。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他喜欢画画，今天画了两次画。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā xǐhuān huàhuà, jīntiān huà le liǎng cì huà. — Anh ấy thích vẽ tranh, hôm nay đã vẽ tranh hai lần.</div>
+</div>
+<div style="margin-top:8px;"><b>离婚</b> (líhūn) — tách thành 离 + 婚:</div>
+<div class="example">
+<div><b>他离了婚，现在很不高兴。</b> <button class="tts-btn" onclick="speakRate('他离了婚，现在很不高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他离了婚，现在很不高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā lí le hūn, xiànzài hěn bù gāoxìng. — Anh ấy đã ly hôn, bây giờ rất không vui.</div>
+</div>
+<div class="example">
+<div><b>他离过一次婚，现在去工作了。</b> <button class="tts-btn" onclick="speakRate('他离过一次婚，现在去工作了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他离过一次婚，现在去工作了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā lí guò yí cì hūn, xiànzài qù gōngzuò le. — Anh ấy đã từng ly hôn một lần, bây giờ đi làm rồi.</div>
+</div>
+<div class="example">
+<div><b>他离了婚，孩子很不高兴。</b> <button class="tts-btn" onclick="speakRate('他离了婚，孩子很不高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他离了婚，孩子很不高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā lí le hūn, háizi hěn bù gāoxìng. — Anh ấy đã ly hôn, đứa trẻ rất không vui.</div>
+</div>
+<div style="margin-top:8px;"><b>上班</b> (shàngbān) — tách thành 上 + 班:</div>
+<div class="example">
+<div><b>他上了班，就去吃饭了。</b> <button class="tts-btn" onclick="speakRate('他上了班，就去吃饭了。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他上了班，就去吃饭了。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shàng le bān, jiù qù chīfàn le. — Anh ấy đi làm xong rồi đi ăn cơm.</div>
+</div>
+<div class="example">
+<div><b>他上过班，现在去睡觉。</b> <button class="tts-btn" onclick="speakRate('他上过班，现在去睡觉。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他上过班，现在去睡觉。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā shàng guò bān, xiànzài qù shuìjiào. — Anh ấy đã từng đi làm, bây giờ đi ngủ.</div>
+</div>
+<div class="example">
+<div><b>他喜欢上班，今天上了班，很高兴。</b> <button class="tts-btn" onclick="speakRate('他喜欢上班，今天上了班，很高兴。', 0.88)">🔊 Nghe</button> <button class="tts-btn" onclick="speakRate('他喜欢上班，今天上了班，很高兴。', 0.6)">🐢 Nghe chậm</button></div>
+<div class="sentence-sub">Tā xǐhuān shàngbān, jīntiān shàng le bān, hěn gāoxìng. — Anh ấy thích đi làm, hôm nay đã đi làm, rất vui.</div>
+</div>
 </div>
 <div class="card">
 <h2>✏️ Bài 1: Chọn câu đúng <span class="badge">10 câu</span></h2>
@@ -2399,16 +2737,26 @@ function flashRender() {
   var cur = flashDeck[flashIdx], w = cur.w;
   var front = document.getElementById('flash-front'), back = document.getElementById('flash-back');
   if (cur.hanziFront) {
-    front.innerHTML = '<div class="flash-tag">Chữ Hán</div><div class="flash-hanzi">' + w.word + '</div><div class="flash-sub">Chạm để lật — nhớ nghĩa của từ này</div>';
+    front.innerHTML = '<div class="flash-tag">Chữ Hán</div><div class="flash-hanzi">' + w.word + '</div><div class="flash-sub">Chạm giữa để lật · góc trái/phải để chuyển thẻ</div>';
     back.innerHTML = '<div class="flash-tag">Nghĩa</div><div class="flash-meaning">' + w.meaning + '</div><div class="flash-sub">' + w.pinyin + ' · Hán Việt: ' + w.hanviet + '</div>';
   } else {
-    front.innerHTML = '<div class="flash-tag">Nghĩa tiếng Việt</div><div class="flash-meaning">' + w.meaning + '</div><div class="flash-sub">Chạm để lật — nhớ chữ Hán của nghĩa này</div>';
+    front.innerHTML = '<div class="flash-tag">Nghĩa tiếng Việt</div><div class="flash-meaning">' + w.meaning + '</div><div class="flash-sub">Chạm giữa để lật · góc trái/phải để chuyển thẻ</div>';
     back.innerHTML = '<div class="flash-tag">Chữ Hán</div><div class="flash-hanzi">' + w.word + '</div><div class="flash-sub">' + w.pinyin + ' · Hán Việt: ' + w.hanviet + '</div>';
   }
   document.getElementById('flash-card').classList.remove('flipped');
   document.getElementById('flash-count').textContent = 'Thẻ ' + (flashIdx + 1) + ' / ' + flashDeck.length;
 }
 function flashFlip() { var c = document.getElementById('flash-card'); if (c) c.classList.toggle('flipped'); }
+function flashTap(e) {
+  var c = document.getElementById('flash-card');
+  if (!c) return;
+  if (!e || typeof e.clientX !== 'number') { flashFlip(); return; }
+  var r = c.getBoundingClientRect();
+  var x = (e.clientX - r.left) / r.width;
+  if (x < 0.25) { flashPrev(); }
+  else if (x > 0.75) { flashNext(); }
+  else { flashFlip(); }
+}
 function flashNext() { if (flashIdx < flashDeck.length - 1) { flashIdx++; flashRender(); } }
 function flashPrev() { if (flashIdx > 0) { flashIdx--; flashRender(); } }
 function flashReshuffle() { flashShuffleDeck(); flashRender(); }
