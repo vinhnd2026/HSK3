@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 26</b>
+    <b id="prog-text">0 / 27</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -500,6 +500,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="高兴|，|我们|我|精彩|电视|很|转播|运气|好|，|世界杯|看|，|，|很|。|我的|很|电视"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="电视从下午到晚上转播比赛，朋友给我买了东西，他对我很好，我的运气真好。">
+<div><b>Câu 4:</b> Ti-vi phát sóng trận đấu từ chiều đến tối, bạn mua đồ cho tôi, anh ấy đối với tôi rất tốt, vận may của tôi thật tốt.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="买|很|朋友|给|我|真|电视|他|，|我|好|好|晚上|对|，|比赛|。|到|了|运气|东西|我的|从|下午|，|转播"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu HSK 3 · Tổng kết Bài 10</span></h2>
@@ -650,7 +656,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 26</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 27</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -681,7 +687,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'hsk3-Day-40';
-var TOTAL_TASKS = 26;
+var TOTAL_TASKS = 27;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (强)",
@@ -750,6 +756,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "电视转播世界杯，我的运气很好，我很高兴，我们看电视，很精彩。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "电视从下午到晚上转播比赛，朋友给我买了东西，他对我很好，我的运气真好。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",
