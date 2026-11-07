@@ -239,7 +239,7 @@ img, svg { max-width: 100%; }
   <div class="progress-bar">
     <span>🎯 Tiến độ:</span>
     <div class="progress-track"><div class="progress-fill" id="prog-fill"></div></div>
-    <b id="prog-text">0 / 32</b>
+    <b id="prog-text">0 / 33</b>
     <button class="btn-sm active" id="ime-toggle-btn" onclick="toggleIME()" title="Bật/tắt chế độ gõ Pinyin trực tiếp">⌨️ Gõ Pinyin: BẬT</button>
     <button class="btn-sm" onclick="resetAll()" title="Xoá tiến độ làm lại">↺</button>
   </div>
@@ -661,6 +661,12 @@ img, svg { max-width: 100%; }
 <div class="word-bank" data-words="今天|我|家|教室|很|去|，|高兴|。|蛋糕|没有|里|客人|，|带"></div>
 <div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
 </div>
+<div class="scramble-box" id="scr-4" data-target="我带的蛋糕没有他的蛋糕大，他没有我高。">
+<div><b>Câu 4:</b> Bánh kem tôi mang theo không to bằng bánh kem của anh ấy, anh ấy không cao bằng tôi.</div>
+<div class="answer-zone"></div>
+<div class="word-bank" data-words="没有|他|高|他的|蛋糕|我|，|没有|大|我|带|。|的|蛋糕"></div>
+<div class="input-check"><button class="btn-primary" onclick="checkScramble(this)">Kiểm tra câu</button><button class="btn-sm" onclick="resetScramble(this)">Làm lại</button><span class="feedback"></span></div>
+</div>
 </div>
 <div class="card">
 <h2>📚 Bài 7: Đọc hiểu đoạn văn – Chọn đáp án <span class="badge">Đọc hiểu HSK 3</span></h2>
@@ -804,7 +810,7 @@ img, svg { max-width: 100%; }
 </div>
 <div class="card">
 <h2>📋 Tổng kết để gửi em <span class="badge">Câu cần ôn lại</span></h2>
-<div>Đúng <b id="sum-score">0 / 32</b> mục.</div>
+<div>Đúng <b id="sum-score">0 / 33</b> mục.</div>
 <ul class="summary-list" id="wrong-list"><li>Chưa có câu sai nào — anh làm đến đâu, câu sai sẽ tự gom vào đây.</li></ul>
 <div class="input-check">
 <button class="btn-primary" onclick="copySummary()">📋 Chép kết quả</button>
@@ -835,7 +841,7 @@ img, svg { max-width: 100%; }
 <script>
 // ====== Trạng thái + lưu trữ (localStorage) ======
 var LS_KEY = 'hsk3-Day-15';
-var TOTAL_TASKS = 32;
+var TOTAL_TASKS = 33;
 var ITEM_INFO = {
   "rev-1": [
     "Ôn nhanh 1 (休息)",
@@ -928,6 +934,10 @@ var ITEM_INFO = {
   "scr-3": [
     "Sắp xếp câu 3",
     "今天家里没有客人，我带蛋糕去教室，很高兴。"
+  ],
+  "scr-4": [
+    "Sắp xếp câu 4",
+    "我带的蛋糕没有他的蛋糕大，他没有我高。"
   ],
   "read-1": [
     "Đọc hiểu câu 1",
