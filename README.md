@@ -25,7 +25,7 @@ Bộ bài học HSK 3: 40 ngày, mỗi ngày 5 từ mới, học từ Bài 1 đ�
 
 ## Bổ sung (học sau khi xong 40 ngày)
 
-- **📖 Ôn tập Ngữ pháp HSK 3 (40 điểm + 33 bài tập):** [Bai-Hoc-On-Ngu-Phap-HSK3.html](https://vinhnd2026.github.io/HSK3/Bai-Hoc-On-Ngu-Phap-HSK3.html) — pinyin hiện sẵn trong mọi ví dụ; kèm mục Động từ ly hợp （离合动词） với ví dụ dạng tách cho từng động từ.
+- **📖 Ôn tập Ngữ pháp HSK 3 (47 điểm + 33 bài tập):** [Bai-Hoc-On-Ngu-Phap-HSK3.html](https://vinhnd2026.github.io/HSK3/Bai-Hoc-On-Ngu-Phap-HSK3.html) — pinyin hiện sẵn trong mọi ví dụ; kèm mục Động từ ly hợp （离合动词） với ví dụ dạng tách cho từng động từ.
 - **📚 Bài Tổng Kết HSK 3:** [Bai-Hoc-Tong-Ket-HSK3.html](https://vinhnd2026.github.io/HSK3/Bai-Hoc-Tong-Ket-HSK3.html) — flashcard toàn bộ từ, bảng từ vựng 10 bài, 8 bài tập tổng kết (62 bài tập), truyện tổng kết dùng đủ toàn bộ từ vựng.
 
 Bấm vào từng ngày bên dưới để mở thẳng trang bài học của ngày đó.
