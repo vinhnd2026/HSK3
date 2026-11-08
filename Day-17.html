@@ -2980,11 +2980,11 @@ function flashRender() {
   var cur = flashDeck[flashIdx], w = cur.w;
   var front = document.getElementById('flash-front'), back = document.getElementById('flash-back');
   if (cur.hanziFront) {
-    front.innerHTML = '<div class="flash-tag">Chữ Hán</div><div class="flash-hanzi">' + w.word + '</div><div class="flash-sub">Chạm giữa để lật · góc trái/phải để chuyển thẻ</div>';
-    back.innerHTML = '<div class="flash-tag">Nghĩa</div><div class="flash-meaning">' + w.meaning + '</div><div class="flash-sub">' + w.pinyin + ' · Hán Việt: ' + w.hanviet + '</div>' + (w.exr ? '<div class="flash-ex"><span class="flash-ex-label">Ví dụ: </span>' + w.exr + '</div><div class="flash-ex-vi">' + w.exv + '</div>' : '');
+    front.innerHTML = '<div class="flash-hanzi">' + w.word + '</div>';
+    back.innerHTML = '<div class="flash-meaning">' + w.meaning + '</div><div class="flash-sub">' + w.pinyin + ' · Hán Việt: ' + w.hanviet + '</div>' + (w.exr ? '<div class="flash-ex"><span class="flash-ex-label">Ví dụ: </span>' + w.exr + '</div><div class="flash-ex-vi">' + w.exv + '</div>' : '');
   } else {
-    front.innerHTML = '<div class="flash-tag">Nghĩa tiếng Việt</div><div class="flash-meaning">' + w.meaning + '</div><div class="flash-sub">Chạm giữa để lật · góc trái/phải để chuyển thẻ</div>';
-    back.innerHTML = '<div class="flash-tag">Chữ Hán</div><div class="flash-hanzi">' + w.word + '</div><div class="flash-sub">' + w.pinyin + ' · Hán Việt: ' + w.hanviet + '</div>' + (w.exr ? '<div class="flash-ex"><span class="flash-ex-label">Ví dụ: </span>' + w.exr + '</div><div class="flash-ex-vi">' + w.exv + '</div>' : '');
+    front.innerHTML = '<div class="flash-meaning">' + w.meaning + '</div>';
+    back.innerHTML = '<div class="flash-hanzi">' + w.word + '</div><div class="flash-sub">' + w.pinyin + ' · Hán Việt: ' + w.hanviet + '</div>' + (w.exr ? '<div class="flash-ex"><span class="flash-ex-label">Ví dụ: </span>' + w.exr + '</div><div class="flash-ex-vi">' + w.exv + '</div>' : '');
   }
   document.getElementById('flash-card').classList.remove('flipped');
   document.getElementById('flash-count').textContent = 'Thẻ ' + (flashIdx + 1) + ' / ' + flashDeck.length;
